@@ -31,52 +31,6 @@ function CompaniesPage() {
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const { user, isAdmin, setIsAdmin } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$context$2f$authContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useAuth"])();
     const userId = user?.user_id;
-    // useEffect(() => {
-    //   const fetchCompanies = async () => {
-    //     try {
-    //       const data = await apiClient.get(`/company-members/${userId}`);
-    //       setCompanies(data);
-    //       const detailedCompanyPromises = data.map((company: any) =>
-    //       apiClient.get(`/company-members/${company.company_id}/${userId}`));
-    //       const detailedCompanyMemberships = await Promise.all(detailedCompanyPromises);
-    //       const isAdminInAny = detailedCompanyPromises.some((company: any) => company.user_role === 'ADMIN');
-    //       companies.map((id)=> id.company_id);
-    //       console.log("isAdminInAny: ", isAdminInAny);
-    //       setIsAdmin(isAdminInAny);
-    //       console.log("isAdmin: ", isAdmin);
-    //     } catch (err) {
-    //       setError('Failed to fetch companies');
-    //     }
-    //   };
-    //   if (userId) {
-    //     fetchCompanies();
-    //   }
-    // }, [userId]);
-    //   useEffect(() => {
-    //   const fetchCompanies = async () => {
-    //     try {
-    //       const data = await apiClient.get(`/company-members/${userId}`);
-    //       setCompanies(data);
-    //       // Fetch detailed memberships for each company
-    //       const detailedCompanyPromises = data.map((company: any) =>
-    //         apiClient.get(`/company-members/${company.company_id}/${userId}`)
-    //       );
-    //       const detailedCompanyMemberships = await Promise.all(detailedCompanyPromises);
-    //       // Check if the user is an admin in any company
-    //       const isAdminInAny = detailedCompanyMemberships.some(
-    //         (company: any) => company.user_role === 'ADMIN'
-    //       );
-    //       setIsAdmin(isAdminInAny);
-    //       console.log("isAdminInAny: ", isAdminInAny);
-    //     } catch (err) {
-    //       console.error(err);
-    //       setError('Failed to fetch companies');
-    //     }
-    //   };
-    //   if (userId) {
-    //     fetchCompanies();
-    //   }
-    // }, [userId, setCompanies, setIsAdmin]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "CompaniesPage.useEffect": ()=>{
             const fetchCompanies = {
@@ -154,7 +108,7 @@ function CompaniesPage() {
                 children: "All Companies"
             }, void 0, false, {
                 fileName: "[project]/src/app/dashboard/company/page.tsx",
-                lineNumber: 149,
+                lineNumber: 86,
                 columnNumber: 7
             }, this),
             error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -162,7 +116,7 @@ function CompaniesPage() {
                 children: error
             }, void 0, false, {
                 fileName: "[project]/src/app/dashboard/company/page.tsx",
-                lineNumber: 151,
+                lineNumber: 88,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -177,7 +131,7 @@ function CompaniesPage() {
                                     children: company.company_name
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/dashboard/company/page.tsx",
-                                    lineNumber: 157,
+                                    lineNumber: 94,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -185,23 +139,23 @@ function CompaniesPage() {
                                     children: company.company_location || 'No location'
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/dashboard/company/page.tsx",
-                                    lineNumber: 158,
+                                    lineNumber: 95,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/dashboard/company/page.tsx",
-                            lineNumber: 156,
+                            lineNumber: 93,
                             columnNumber: 13
                         }, this)
                     }, company.company_id, false, {
                         fileName: "[project]/src/app/dashboard/company/page.tsx",
-                        lineNumber: 155,
+                        lineNumber: 92,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/app/dashboard/company/page.tsx",
-                lineNumber: 153,
+                lineNumber: 90,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -213,7 +167,7 @@ function CompaniesPage() {
                         children: "Create a New Company"
                     }, void 0, false, {
                         fileName: "[project]/src/app/dashboard/company/page.tsx",
-                        lineNumber: 167,
+                        lineNumber: 104,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -223,7 +177,7 @@ function CompaniesPage() {
                                 children: "Company Name"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/dashboard/company/page.tsx",
-                                lineNumber: 170,
+                                lineNumber: 107,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -234,13 +188,13 @@ function CompaniesPage() {
                                 required: true
                             }, void 0, false, {
                                 fileName: "[project]/src/app/dashboard/company/page.tsx",
-                                lineNumber: 171,
+                                lineNumber: 108,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/dashboard/company/page.tsx",
-                        lineNumber: 169,
+                        lineNumber: 106,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -250,7 +204,7 @@ function CompaniesPage() {
                                 children: "Location"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/dashboard/company/page.tsx",
-                                lineNumber: 181,
+                                lineNumber: 118,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -260,13 +214,13 @@ function CompaniesPage() {
                                 className: "mt-1 block w-full border border-gray-300 rounded-md p-2"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/dashboard/company/page.tsx",
-                                lineNumber: 182,
+                                lineNumber: 119,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/dashboard/company/page.tsx",
-                        lineNumber: 180,
+                        lineNumber: 117,
                         columnNumber: 9
                     }, this),
                     formError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -274,7 +228,7 @@ function CompaniesPage() {
                         children: formError
                     }, void 0, false, {
                         fileName: "[project]/src/app/dashboard/company/page.tsx",
-                        lineNumber: 190,
+                        lineNumber: 127,
                         columnNumber: 23
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -284,19 +238,19 @@ function CompaniesPage() {
                         children: loading ? 'Creating...' : 'Create Company'
                     }, void 0, false, {
                         fileName: "[project]/src/app/dashboard/company/page.tsx",
-                        lineNumber: 192,
+                        lineNumber: 129,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/dashboard/company/page.tsx",
-                lineNumber: 166,
+                lineNumber: 103,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/dashboard/company/page.tsx",
-        lineNumber: 148,
+        lineNumber: 85,
         columnNumber: 5
     }, this);
 }

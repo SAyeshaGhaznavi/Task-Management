@@ -28,7 +28,7 @@ export class EventsGateway implements OnGatewayInit, OnGatewayConnection, OnGate
   server: Server;
 
   private logger = new Logger('EventsGateway');
-  private connectedUsers = new Map<string, number>(); // socketId -> userId
+  private connectedUsers = new Map<string, number>();
 
   afterInit(server: Server) {
     this.logger.log('✅ WebSocket Gateway Initialized');
@@ -37,13 +37,11 @@ export class EventsGateway implements OnGatewayInit, OnGatewayConnection, OnGate
   handleConnection(client: AuthenticatedSocket) {
     this.logger.log(`🔌 Client connected: ${client.id}`);
     
-    // Extract user ID from query params or headers
     const userId = this.extractUserIdFromSocket(client);
     if (userId) {
       client.userId = userId;
       this.connectedUsers.set(client.id, userId);
       
-      // Join user-specific room
       client.join(`user:${userId}`);
       this.logger.log(`👤 User ${userId} joined room: user:${userId}`);
     }
@@ -55,17 +53,15 @@ export class EventsGateway implements OnGatewayInit, OnGatewayConnection, OnGate
   }
 
   private extractUserIdFromSocket(client: AuthenticatedSocket): number | null {
-    // Method 1: From query parameters
+
     const userId = client.handshake.query.userId;
     if (userId) {
       return parseInt(userId as string);
     }
 
-    // Method 2: From auth token (if you implement JWT in WebSocket)
     const token = client.handshake.auth.token;
     if (token) {
-      // Decode JWT and extract userId
-      // This would require implementing JWT verification for WebSocket
+
       return null;
     }
 
@@ -81,7 +77,6 @@ export class EventsGateway implements OnGatewayInit, OnGatewayConnection, OnGate
     client.userId = userId;
     this.connectedUsers.set(client.id, userId);
     
-    // Join user-specific room
     client.join(`user:${userId}`);
     this.logger.log(`🔐 User ${userId} authenticated via WebSocket`);
     
@@ -97,7 +92,6 @@ export class EventsGateway implements OnGatewayInit, OnGatewayConnection, OnGate
     client.userId = userId;
     this.connectedUsers.set(client.id, userId);
     
-    // Join user-specific notification room
     client.join(`user:${userId}`);
     this.logger.log(`📢 User ${userId} joined notifications room`);
     
@@ -109,7 +103,6 @@ export class EventsGateway implements OnGatewayInit, OnGatewayConnection, OnGate
     return 'Message received: ' + data;
   }
 
-  // Enhanced notification method for todo assignments
   notifyTodoAssigned(userId: number, payload: {
     todoId: number;
     projectId: number;
@@ -124,27 +117,22 @@ export class EventsGateway implements OnGatewayInit, OnGatewayConnection, OnGate
       timestamp: new Date().toISOString(),
     };
 
-    // Emit to specific user room
     this.server.to(`user:${userId}`).emit('todoAssigned', notificationPayload);
     
-    // Also emit to all connected clients (for debugging)
     this.server.emit('todoAssigned', { ...notificationPayload, userId });
     
     this.logger.log(`📢 Todo assignment notification sent to user ${userId}: ${payload.message}`);
   }
 
-  // Method to get connected users count
   getConnectedUsersCount(): number {
     return this.connectedUsers.size;
   }
 
-  // Method to check if a specific user is connected
   isUserConnected(userId: number): boolean {
     return Array.from(this.connectedUsers.values()).includes(userId);
   }
 
   onModuleInit() {
-    // Remove the test notification after 3 seconds
     setTimeout(() => {
       const testUserId = 5;
       const payload = {

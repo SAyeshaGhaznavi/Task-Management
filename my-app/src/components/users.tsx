@@ -1,4 +1,3 @@
-// pages/users.tsx or components/Users.tsx
 import { useEffect, useState } from 'react';
 import apiClient from '../app/lib/api';
 

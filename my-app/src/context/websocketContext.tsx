@@ -68,7 +68,6 @@ export const WebSocketProvider = ({ children }: { children: ReactNode }) => {
       console.log('📢 Received todo assignment notification:', notification);
       setNotifications(prev => [notification, ...prev]);
       
-      // Show browser notification if permission is granted
       if (Notification.permission === 'granted') {
         new Notification('New Todo Assigned', {
           body: notification.message,
@@ -84,7 +83,6 @@ export const WebSocketProvider = ({ children }: { children: ReactNode }) => {
 
     setSocket(newSocket);
 
-    // Cleanup on unmount
     return () => {
       newSocket.disconnect();
     };

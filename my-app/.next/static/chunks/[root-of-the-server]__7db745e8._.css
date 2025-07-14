@@ -283,6 +283,10 @@
     top: calc(var(--spacing) * -1);
   }
 
+  .top-full {
+    top: 100%;
+  }
+
   .-right-1 {
     right: calc(var(--spacing) * -1);
   }
@@ -293,6 +297,14 @@
 
   .-bottom-1 {
     bottom: calc(var(--spacing) * -1);
+  }
+
+  .bottom-full {
+    bottom: 100%;
+  }
+
+  .left-0 {
+    left: calc(var(--spacing) * 0);
   }
 
   .z-50 {

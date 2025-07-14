@@ -37,7 +37,6 @@ export class UserTodoService {
       throw new Error('Todo not found');
     }
 
-    // Validate user is member of project
     const member = await this.prisma.user_project.findFirst({
       where: {
         user_id: user_id,
@@ -49,7 +48,6 @@ export class UserTodoService {
       throw new Error('User is not assigned to this project');
     }    
 
-    // Validate todo belongs to the same project
     const todoTask = await this.prisma.todo.findFirst({
       where: {
         todo_id: todo_id,
@@ -68,20 +66,17 @@ export class UserTodoService {
       throw new Error('Todo is not part of the same project');
     }
 
-    // Get project name for notification
     const project = await this.prisma.project.findUnique({
       where: { project_id },
       select: { project_name: true },
     });
 
-    // Create the user-todo assignment
     const userTodo = await this.prisma.user_todo.create({ 
       data: createUserTodoDto
     });
 
     this.logger.log(`✅ Todo ${todo_id} successfully assigned to user ${user_id}`);
 
-    // Prepare notification payload
     const notificationPayload = {
       todoId: todo_id,
       projectId: project_id,
@@ -91,14 +86,12 @@ export class UserTodoService {
     };
 
     try {
-      // Add to notification queue for background processing
       await this.notificationQueue.add('create-notification', {
         userId: user_id,
         ...notificationPayload,
         message: `You've been assigned a new TODO (ID: ${todo_id})`,
       });
 
-      // Create notification in database
       const notification = await this.notificationService.createNotification({
         userId: user_id,
         todoId: todo_id,
@@ -106,7 +99,6 @@ export class UserTodoService {
         message: notificationPayload.message,
       });
 
-      // Send real-time WebSocket notification
       this.eventsGateway.notifyTodoAssigned(user_id, {
         ...notificationPayload,
         createdAt: notification.createdAt,
@@ -115,7 +107,6 @@ export class UserTodoService {
       this.logger.log(`📢 Notification sent to user ${user_id} for todo ${todo_id}`);
     } catch (error) {
       this.logger.error(`❌ Failed to send notification to user ${user_id}: ${error.message}`);
-      // Don't throw error here - the todo assignment was successful
     }
 
     return userTodo;

@@ -52,7 +52,7 @@ export default function NotificationBell() {
 
       {/* Notification Dropdown */}
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+      <div className="absolute left-0 bottom-full mb-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
           <div className="p-4 border-b border-gray-200">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-semibold text-gray-900">Notifications</h3>
@@ -66,7 +66,7 @@ export default function NotificationBell() {
               </div>
             </div>
           </div>
-          
+
           <div className="max-h-96 overflow-y-auto">
             {notifications.length === 0 ? (
               <div className="p-4 text-center text-gray-500">

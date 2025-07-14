@@ -549,7 +549,6 @@ const WebSocketProvider = ({ children })=>{
                     notification,
                     ...prev
                 ]);
-            // Show browser notification if permission is granted
             if (Notification.permission === 'granted') {
                 new Notification('New Todo Assigned', {
                     body: notification.message,
@@ -562,7 +561,6 @@ const WebSocketProvider = ({ children })=>{
             setIsConnected(false);
         });
         setSocket(newSocket);
-        // Cleanup on unmount
         return ()=>{
             newSocket.disconnect();
         };
@@ -586,7 +584,7 @@ const WebSocketProvider = ({ children })=>{
         children: children
     }, void 0, false, {
         fileName: "[project]/src/context/websocketContext.tsx",
-        lineNumber: 102,
+        lineNumber: 100,
         columnNumber: 5
     }, this);
 };

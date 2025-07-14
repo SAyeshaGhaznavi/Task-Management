@@ -1,0 +1,8 @@
+# Ignore all node_modules folders recursively
+**/node_modules
+
+# Optional: Ignore environment and build files
+**/.next
+**/dist
+**/build
+**/.env
