@@ -13,5 +13,5 @@ export declare class NotificationProcessor extends WorkerHost {
         todoId: number | null;
         projectId: number | null;
         createdAt: Date;
-    }>;
+    } | null>;
 }

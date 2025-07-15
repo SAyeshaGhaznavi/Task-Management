@@ -22,8 +22,12 @@ let NotificationProcessor = class NotificationProcessor extends bullmq_1.WorkerH
         this.eventsGateway = eventsGateway;
     }
     async process(job) {
-        const { userId, todoId, projectId, message } = job.data;
+        const { userId, todoId, projectId, message, assignedBy } = job.data;
         console.log('Processing notification job:', job.data);
+        if (assignedBy && userId === assignedBy) {
+            console.log('Skipping notification: assigned user is the same as assigning user.');
+            return null;
+        }
         const notification = await this.notificationService.createNotification({
             userId,
             todoId,

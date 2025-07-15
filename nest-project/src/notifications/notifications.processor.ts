@@ -13,8 +13,14 @@ export class NotificationProcessor extends WorkerHost {
   }
 
   async process(job: Job) {
-    const { userId, todoId, projectId, message } = job.data;
+    const { userId, todoId, projectId, message, assignedBy } = job.data;
     console.log('Processing notification job:', job.data);
+
+    // Prevent notifying the assigning user if userId === assignedBy
+    if (assignedBy && userId === assignedBy) {
+      console.log('Skipping notification: assigned user is the same as assigning user.');
+      return null;
+    }
 
     const notification = await this.notificationService.createNotification({
       userId,

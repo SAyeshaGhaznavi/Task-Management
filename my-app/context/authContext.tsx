@@ -254,13 +254,18 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     setAccessToken(response.access_token);
 
-    setUser({
+    const newUser = {
       user_id: response.user.user_id,
       user_name: response.user.user_name,
       email: response.user.email,
       phone: response.user.phone,
       password: response.user.password,
-    });
+    };
+
+    setUser(newUser);
+
+    localStorage.setItem('user', JSON.stringify(newUser));
+    localStorage.setItem('token', response.access_token);
 
     console.log("User after register: ", user);
 

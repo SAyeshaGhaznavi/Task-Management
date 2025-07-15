@@ -5,6 +5,7 @@ class CreateUserTodoDto {
     user_id;
     project_id;
     todo_id;
+    assigned_by;
 }
 exports.CreateUserTodoDto = CreateUserTodoDto;
 //# sourceMappingURL=create-user_todo.dto.js.map

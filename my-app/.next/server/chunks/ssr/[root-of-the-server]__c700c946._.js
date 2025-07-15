@@ -291,13 +291,16 @@ const AuthProvider = ({ children })=>{
             });
             console.log("Response: ", response.user.user_name);
             (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$lib$2f$api$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["setAccessToken"])(response.access_token);
-            setUser({
+            const newUser = {
                 user_id: response.user.user_id,
                 user_name: response.user.user_name,
                 email: response.user.email,
                 phone: response.user.phone,
                 password: response.user.password
-            });
+            };
+            setUser(newUser);
+            localStorage.setItem('user', JSON.stringify(newUser));
+            localStorage.setItem('token', response.access_token);
             console.log("User after register: ", user);
             setIsLoggedIn(true);
             setAuthData({
@@ -406,7 +409,7 @@ const AuthProvider = ({ children })=>{
         children: children
     }, void 0, false, {
         fileName: "[project]/context/authContext.tsx",
-        lineNumber: 337,
+        lineNumber: 342,
         columnNumber: 5
     }, this);
 };

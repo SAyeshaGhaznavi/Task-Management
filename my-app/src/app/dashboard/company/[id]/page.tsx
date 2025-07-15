@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState, memo } from 'react';
 import { useParams } from 'next/navigation';
 import apiClient from '../../../lib/api';
 import { useAuth } from '../../../../../context/authContext';
@@ -87,7 +87,7 @@ export default function CompanyDetailPage() {
   );
 }
 
-function CreateProjectForm({  }) {
+const CreateProjectForm = React.memo(function CreateProjectForm({  }) {
   const [name, setName] = useState('');
   const [desc, setDesc] = useState('');
   const [msg, setMsg] = useState('');
@@ -133,17 +133,15 @@ function CreateProjectForm({  }) {
       {msg && <p className="text-sm text-gray-500">{msg}</p>}
     </form>
   );
-}
+});
 
-
-function InviteMemberForm() {
+const InviteMemberForm = React.memo(function InviteMemberForm() {
   const [userId, setUserId] = useState('');
   const [email, setEmail] = useState('');
   const [msg, setMsg] = useState('');
   const { company } = useAuth();
   const {user} = useAuth();
   const companyId = company?.company_id;
-
 
   const handleInvite = async (e: React.FormEvent) => {
   e.preventDefault();
@@ -188,7 +186,6 @@ function InviteMemberForm() {
   }
 };
 
-
   return (
     <form onSubmit={handleInvite} className="mt-6 space-y-4">
       <h4 className="text-lg font-semibold">Invite New Member</h4>
@@ -205,4 +202,4 @@ function InviteMemberForm() {
       {msg && <p className="text-sm text-gray-500">{msg}</p>}
     </form>
   );
-}
+});

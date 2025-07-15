@@ -158,7 +158,7 @@ _s(CompanyDetailPage, "Xi2s40Nj8AdRoT5md75KTqLGMag=", false, function() {
     ];
 });
 _c = CompanyDetailPage;
-function CreateProjectForm({}) {
+const CreateProjectForm = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].memo(_s1(function CreateProjectForm({}) {
     _s1();
     const [name, setName] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const [desc, setDesc] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
@@ -237,14 +237,13 @@ function CreateProjectForm({}) {
         lineNumber: 115,
         columnNumber: 5
     }, this);
-}
-_s1(CreateProjectForm, "JLAnewTfaSwQzlIULKHw+KHWFo0=", false, function() {
+}, "JLAnewTfaSwQzlIULKHw+KHWFo0=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$context$2f$authContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useAuth"]
     ];
-});
+}));
 _c1 = CreateProjectForm;
-function InviteMemberForm() {
+const InviteMemberForm = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].memo(_s2(function InviteMemberForm() {
     _s2();
     const [userId, setUserId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const [email, setEmail] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
@@ -296,7 +295,7 @@ function InviteMemberForm() {
                 children: "Invite New Member"
             }, void 0, false, {
                 fileName: "[project]/src/app/dashboard/company/[id]/page.tsx",
-                lineNumber: 194,
+                lineNumber: 191,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -307,7 +306,7 @@ function InviteMemberForm() {
                 className: "border p-2 w-full"
             }, void 0, false, {
                 fileName: "[project]/src/app/dashboard/company/[id]/page.tsx",
-                lineNumber: 195,
+                lineNumber: 192,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -316,7 +315,7 @@ function InviteMemberForm() {
                 children: "Invite"
             }, void 0, false, {
                 fileName: "[project]/src/app/dashboard/company/[id]/page.tsx",
-                lineNumber: 202,
+                lineNumber: 199,
                 columnNumber: 7
             }, this),
             msg && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -324,22 +323,21 @@ function InviteMemberForm() {
                 children: msg
             }, void 0, false, {
                 fileName: "[project]/src/app/dashboard/company/[id]/page.tsx",
-                lineNumber: 205,
+                lineNumber: 202,
                 columnNumber: 15
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/dashboard/company/[id]/page.tsx",
-        lineNumber: 193,
+        lineNumber: 190,
         columnNumber: 5
     }, this);
-}
-_s2(InviteMemberForm, "ciE/WL9xXMYtKhxXVMPqyhsMoYQ=", false, function() {
+}, "ciE/WL9xXMYtKhxXVMPqyhsMoYQ=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$context$2f$authContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useAuth"],
         __TURBOPACK__imported__module__$5b$project$5d2f$context$2f$authContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useAuth"]
     ];
-});
+}));
 _c2 = InviteMemberForm;
 var _c, _c1, _c2;
 __turbopack_context__.k.register(_c, "CompanyDetailPage");

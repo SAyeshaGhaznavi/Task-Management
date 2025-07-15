@@ -27,7 +27,7 @@ let UserTodoController = class UserTodoController {
         this.notificationQueue = notificationQueue;
     }
     create(createUserTodoDto) {
-        return this.userTodoService.create(createUserTodoDto);
+        return this.userTodoService.create({ ...createUserTodoDto });
     }
     findAll() {
         return this.userTodoService.findAll();

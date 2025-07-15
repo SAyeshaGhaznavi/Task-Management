@@ -84,18 +84,6 @@ let EventsGateway = class EventsGateway {
         return Array.from(this.connectedUsers.values()).includes(userId);
     }
     onModuleInit() {
-        setTimeout(() => {
-            const testUserId = 5;
-            const payload = {
-                todoId: 999,
-                projectId: 1,
-                message: 'Test todo assignment',
-                todoTitle: 'Test Todo',
-                projectName: 'Test Project',
-            };
-            this.notifyTodoAssigned(testUserId, payload);
-            this.logger.log(`✅ Test notification sent to user ${testUserId}`);
-        }, 3000);
     }
 };
 exports.EventsGateway = EventsGateway;

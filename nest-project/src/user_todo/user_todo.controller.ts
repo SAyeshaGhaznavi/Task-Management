@@ -14,7 +14,9 @@ export class UserTodoController {
 
   @Post()
   create(@Body() createUserTodoDto: CreateUserTodoDto) {
-    return this.userTodoService.create(createUserTodoDto);
+    // TODO: Replace  assigningUserId with actual user ID from auth/session
+    //const assigningUserId = null; // e.g., req.user.userId if using auth
+    return this.userTodoService.create({ ...createUserTodoDto});
   }
 
   @Get()

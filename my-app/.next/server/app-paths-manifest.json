@@ -1,15 +1,11 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/dashboard/admin/assignproject/page": "app/dashboard/admin/assignproject/page.js",
   "/dashboard/admin/assigntodo/page": "app/dashboard/admin/assigntodo/page.js",
   "/dashboard/admin/members/page": "app/dashboard/admin/members/page.js",
   "/dashboard/admin/page": "app/dashboard/admin/page.js",
   "/dashboard/company/[id]/page": "app/dashboard/company/[id]/page.js",
   "/dashboard/company/page": "app/dashboard/company/page.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/dashboard/project/page": "app/dashboard/project/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/login/page": "app/login/page.js",
-  "/page": "app/page.js",
-  "/register/page": "app/register/page.js"
+  "/page": "app/page.js"
 }

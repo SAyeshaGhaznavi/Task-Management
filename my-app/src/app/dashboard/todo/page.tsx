@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, memo } from 'react';
 import apiClient from '../../lib/api';
 import { useAuth } from '../../../../context/authContext';
 
