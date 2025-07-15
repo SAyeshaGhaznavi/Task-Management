@@ -67,6 +67,7 @@ export default function UsersPage() {
   try {
     const res: User = await apiClient.get(`/users/by-email/${email}`);
     const userid=res.user_id;
+    console.log("User/email: ",userid, res);
 
     if (!email || !companyid) {
       setMes("Missing email or company ID");

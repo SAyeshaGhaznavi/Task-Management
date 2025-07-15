@@ -184,6 +184,18 @@ const AuthProvider = ({ children })=>{
     }["AuthProvider.useEffect"], []);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "AuthProvider.useEffect": ()=>{
+            const storedUser = localStorage.getItem('user');
+            const storedToken = localStorage.getItem('token');
+            if (storedUser && storedToken) {
+                setUser(JSON.parse(storedUser));
+                setIsLoggedIn(true);
+                (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$lib$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setAccessToken"])(storedToken);
+                checkAuthStatus();
+            }
+        }
+    }["AuthProvider.useEffect"], []);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "AuthProvider.useEffect": ()=>{
             checkAuthStatus();
         }
     }["AuthProvider.useEffect"], []);
@@ -206,6 +218,37 @@ const AuthProvider = ({ children })=>{
             setIsLoggedIn(false);
         }
     };
+    // const handleLogin = async (e: React.FormEvent) => {
+    //   try {
+    //       e.preventDefault();
+    //       const response = await apiClient.post('/auth/login', {
+    //         email: authData.email,
+    //         password: authData.password,
+    //       });
+    //       setAccessToken(response.access_token);
+    //       console.log("Access Token: ", response.access_token);
+    //       console.log("Refresh Token: ", response.refresh_token);
+    //       setUser({
+    //         user_id: response.user.user_id,
+    //         user_name: response.user.user_name,
+    //         email: response.user.email,
+    //         phone: response.user.phone,
+    //         password: response.user.password,
+    //       });
+    //       console.log("User: ", user);
+    //       setIsLoggedIn(true);
+    //       setAuthData({ email: '', password: '', name: '', phone: '' });
+    //       setError(null);
+    //       localStorage.setItem('user', JSON.stringify(user));
+    //       localStorage.setItem('token', response.access_token);
+    //       //setUser(user);
+    //       //setToken(response.access_token);
+    //   } catch (err) {
+    //     setError('Login failed. Please check your credentials.');
+    //   } finally {
+    //     setLoading(false);
+    //   }
+    // };
     const handleLogin = async (e)=>{
         try {
             e.preventDefault();
@@ -214,16 +257,16 @@ const AuthProvider = ({ children })=>{
                 password: authData.password
             });
             (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$lib$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setAccessToken"])(response.access_token);
-            console.log("Access Token: ", response.access_token);
-            console.log("Refresh Token: ", response.refresh_token);
-            setUser({
+            const newUser = {
                 user_id: response.user.user_id,
                 user_name: response.user.user_name,
                 email: response.user.email,
                 phone: response.user.phone,
                 password: response.user.password
-            });
-            console.log("User: ", user);
+            };
+            setUser(newUser);
+            console.log("Access Token: ", response.access_token);
+            console.log("Refresh Token: ", response.refresh_token);
             setIsLoggedIn(true);
             setAuthData({
                 email: '',
@@ -232,6 +275,8 @@ const AuthProvider = ({ children })=>{
                 phone: ''
             });
             setError(null);
+            localStorage.setItem('user', JSON.stringify(newUser));
+            localStorage.setItem('token', response.access_token);
         } catch (err) {
             setError('Login failed. Please check your credentials.');
         } finally{
@@ -283,6 +328,10 @@ const AuthProvider = ({ children })=>{
         setUser(null);
         setUsers([]);
         setTasks([]);
+        setUser(null);
+        localStorage.removeItem('user');
+        localStorage.removeItem('token');
+        //setToken(null);
         window.location.href = 'http://localhost:3000';
     };
     const fetchUsers = async ()=>{
@@ -365,11 +414,11 @@ const AuthProvider = ({ children })=>{
         children: children
     }, void 0, false, {
         fileName: "[project]/context/authContext.tsx",
-        lineNumber: 287,
+        lineNumber: 337,
         columnNumber: 5
     }, this);
 };
-_s(AuthProvider, "c6aJQfwfXndkLAU9CllgRrk6+YI=");
+_s(AuthProvider, "YalH0eLs0yAgWfvdJpnVyhBbzBg=");
 _c = AuthProvider;
 const useAuth = ()=>{
     _s1();

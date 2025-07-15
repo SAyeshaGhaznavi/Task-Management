@@ -55,6 +55,9 @@ function ProjectsPage() {
             const tasktemp = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$lib$2f$api$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].get(`/task/${todotemp.task_id}`);
             console.log("Task temp task: ", tasktemp);
             console.log("Task temp project: ", tasktemp.project_id);
+            console.log("user_id: ", userId);
+            console.log("todo_id: ", todoId);
+            console.log("project_id: ", tasktemp.project_id);
             await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$lib$2f$api$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].post('/user-todo', {
                 user_id: userId,
                 todo_id: todoId,
@@ -76,7 +79,7 @@ function ProjectsPage() {
                 children: "Company Todos"
             }, void 0, false, {
                 fileName: "[project]/src/app/dashboard/admin/assigntodo/page.tsx",
-                lineNumber: 97,
+                lineNumber: 100,
                 columnNumber: 7
             }, this),
             error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -84,7 +87,7 @@ function ProjectsPage() {
                 children: error
             }, void 0, false, {
                 fileName: "[project]/src/app/dashboard/admin/assigntodo/page.tsx",
-                lineNumber: 99,
+                lineNumber: 102,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -97,7 +100,7 @@ function ProjectsPage() {
                                 children: todo.todo_name
                             }, void 0, false, {
                                 fileName: "[project]/src/app/dashboard/admin/assigntodo/page.tsx",
-                                lineNumber: 107,
+                                lineNumber: 110,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -105,7 +108,7 @@ function ProjectsPage() {
                                 children: todo.todo_description || 'No description'
                             }, void 0, false, {
                                 fileName: "[project]/src/app/dashboard/admin/assigntodo/page.tsx",
-                                lineNumber: 108,
+                                lineNumber: 111,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -116,7 +119,7 @@ function ProjectsPage() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/dashboard/admin/assigntodo/page.tsx",
-                                lineNumber: 109,
+                                lineNumber: 112,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -125,7 +128,7 @@ function ProjectsPage() {
                                 children: showUsersFor === todo.todo_id ? 'Hide users' : 'Assign user to todo'
                             }, void 0, false, {
                                 fileName: "[project]/src/app/dashboard/admin/assigntodo/page.tsx",
-                                lineNumber: 111,
+                                lineNumber: 114,
                                 columnNumber: 13
                             }, this),
                             showUsersFor === todo.todo_id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -136,7 +139,7 @@ function ProjectsPage() {
                                         children: "Select a user:"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/dashboard/admin/assigntodo/page.tsx",
-                                        lineNumber: 120,
+                                        lineNumber: 123,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -148,7 +151,7 @@ function ProjectsPage() {
                                                         children: u.user_name
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/dashboard/admin/assigntodo/page.tsx",
-                                                        lineNumber: 127,
+                                                        lineNumber: 130,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -157,41 +160,41 @@ function ProjectsPage() {
                                                         children: "Assign"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/dashboard/admin/assigntodo/page.tsx",
-                                                        lineNumber: 128,
+                                                        lineNumber: 131,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, u.user_id, true, {
                                                 fileName: "[project]/src/app/dashboard/admin/assigntodo/page.tsx",
-                                                lineNumber: 123,
+                                                lineNumber: 126,
                                                 columnNumber: 21
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/dashboard/admin/assigntodo/page.tsx",
-                                        lineNumber: 121,
+                                        lineNumber: 124,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/dashboard/admin/assigntodo/page.tsx",
-                                lineNumber: 119,
+                                lineNumber: 122,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, todo.todo_id, true, {
                         fileName: "[project]/src/app/dashboard/admin/assigntodo/page.tsx",
-                        lineNumber: 103,
+                        lineNumber: 106,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/app/dashboard/admin/assigntodo/page.tsx",
-                lineNumber: 101,
+                lineNumber: 104,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/dashboard/admin/assigntodo/page.tsx",
-        lineNumber: 96,
+        lineNumber: 99,
         columnNumber: 5
     }, this);
 }

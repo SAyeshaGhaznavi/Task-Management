@@ -31,7 +31,7 @@ let AuthController = class AuthController {
             sameSite: 'strict',
             maxAge: 7 * 24 * 60 * 60 * 1000,
         });
-        return res.json({ refresh_token: tokens.refresh_token, user: user });
+        return res.json({ refresh_token: tokens.refresh_token, user: user, access_token: tokens.access_token });
     }
     async register(body, res) {
         const { user_name, email, password, phone } = body;

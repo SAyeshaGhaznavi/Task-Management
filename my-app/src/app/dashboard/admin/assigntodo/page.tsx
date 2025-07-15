@@ -77,6 +77,9 @@ export default function ProjectsPage() {
       const tasktemp:Task = await apiClient.get(`/task/${todotemp.task_id}`);
       console.log("Task temp task: ", tasktemp);
       console.log("Task temp project: ", tasktemp.project_id);
+      console.log("user_id: ", userId);
+      console.log("todo_id: ", todoId);
+      console.log("project_id: ", tasktemp.project_id);
       await apiClient.post('/user-todo', {
         user_id: userId,
         todo_id: todoId,

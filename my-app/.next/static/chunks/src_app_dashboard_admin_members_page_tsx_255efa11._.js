@@ -59,6 +59,7 @@ function UsersPage() {
         try {
             const res = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$lib$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].get(`/users/by-email/${email}`);
             const userid = res.user_id;
+            console.log("User/email: ", userid, res);
             if (!email || !companyid) {
                 setMes("Missing email or company ID");
                 return;
@@ -84,7 +85,7 @@ function UsersPage() {
                 children: company
             }, void 0, false, {
                 fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-                lineNumber: 94,
+                lineNumber: 95,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -92,7 +93,7 @@ function UsersPage() {
                 children: "Company Members"
             }, void 0, false, {
                 fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-                lineNumber: 95,
+                lineNumber: 96,
                 columnNumber: 7
             }, this),
             error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -100,7 +101,7 @@ function UsersPage() {
                 children: error
             }, void 0, false, {
                 fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-                lineNumber: 98,
+                lineNumber: 99,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -113,7 +114,7 @@ function UsersPage() {
                                 children: user.user_name
                             }, void 0, false, {
                                 fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-                                lineNumber: 106,
+                                lineNumber: 107,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -121,7 +122,7 @@ function UsersPage() {
                                 children: user.email
                             }, void 0, false, {
                                 fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-                                lineNumber: 107,
+                                lineNumber: 108,
                                 columnNumber: 13
                             }, this),
                             user.phone && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -132,7 +133,7 @@ function UsersPage() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-                                lineNumber: 108,
+                                lineNumber: 109,
                                 columnNumber: 28
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -141,18 +142,18 @@ function UsersPage() {
                                 children: "Remove from company"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-                                lineNumber: 110,
+                                lineNumber: 111,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, user.user_id, true, {
                         fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-                        lineNumber: 102,
+                        lineNumber: 103,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-                lineNumber: 100,
+                lineNumber: 101,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -164,7 +165,7 @@ function UsersPage() {
                         children: "Add New Member"
                     }, void 0, false, {
                         fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-                        lineNumber: 121,
+                        lineNumber: 122,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -175,7 +176,7 @@ function UsersPage() {
                         className: "border p-2 w-full"
                     }, void 0, false, {
                         fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-                        lineNumber: 122,
+                        lineNumber: 123,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -183,7 +184,7 @@ function UsersPage() {
                         children: "New Member Role"
                     }, void 0, false, {
                         fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-                        lineNumber: 129,
+                        lineNumber: 130,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -198,7 +199,7 @@ function UsersPage() {
                                 children: "Select role"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-                                lineNumber: 136,
+                                lineNumber: 137,
                                 columnNumber: 9
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -206,7 +207,7 @@ function UsersPage() {
                                 children: "ADMIN"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-                                lineNumber: 137,
+                                lineNumber: 138,
                                 columnNumber: 9
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -214,7 +215,7 @@ function UsersPage() {
                                 children: "MEMBER"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-                                lineNumber: 138,
+                                lineNumber: 139,
                                 columnNumber: 9
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -222,13 +223,13 @@ function UsersPage() {
                                 children: "EMPLOYEE"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-                                lineNumber: 139,
+                                lineNumber: 140,
                                 columnNumber: 9
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-                        lineNumber: 130,
+                        lineNumber: 131,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -237,7 +238,7 @@ function UsersPage() {
                         children: "Add"
                     }, void 0, false, {
                         fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-                        lineNumber: 142,
+                        lineNumber: 143,
                         columnNumber: 7
                     }, this),
                     mes && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -245,19 +246,19 @@ function UsersPage() {
                         children: mes
                     }, void 0, false, {
                         fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-                        lineNumber: 145,
+                        lineNumber: 146,
                         columnNumber: 15
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-                lineNumber: 120,
+                lineNumber: 121,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/dashboard/admin/members/page.tsx",
-        lineNumber: 93,
+        lineNumber: 94,
         columnNumber: 5
     }, this);
 }

@@ -13,22 +13,22 @@ import { Request } from 'express';
 export class CompanyMembersController {
   constructor(private readonly companyMembersService: CompanyMembersService) {}
 
-  @UseGuards(JwtAuthGuard, RolesGuard)
+  //@UseGuards(JwtAuthGuard, RolesGuard)
   @Post()
-  @Roles(Role.ADMIN)
+  //@Roles(Role.ADMIN)
   async create(
     @Body() createCompanyMemberDto: CreateCompanyMemberDto,
-    @Req() req: Request,
+    //@Req() req: Request,
   ) {
-    const user = req.user as any;
-    const isAuthorized = await this.companyMembersService.isAdminOfCompany(
-      user.userId,
-      createCompanyMemberDto.company_id,
-    );
+    // const user = req.user as any;
+    // const isAuthorized = await this.companyMembersService.isAdminOfCompany(
+    //   user.userId,
+    //   createCompanyMemberDto.company_id,
+    // );
 
-    if (!isAuthorized) {
-      throw new ForbiddenException('Only company admins can add members');
-    }
+    // if (!isAuthorized) {
+    //   throw new ForbiddenException('Only company admins can add members');
+    // }
 
     return this.companyMembersService.create(createCompanyMemberDto);
   }

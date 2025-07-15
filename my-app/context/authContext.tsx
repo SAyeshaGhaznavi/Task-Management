@@ -138,6 +138,17 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   tryRefresh();
   }, []);
 
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    const storedToken = localStorage.getItem('token');
+    if (storedUser && storedToken) {
+      setUser(JSON.parse(storedUser));
+      setIsLoggedIn(true);
+      setAccessToken(storedToken);
+      checkAuthStatus();
+    }
+  }, []);
+
   
 
   useEffect(() => {
@@ -161,33 +172,67 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  // const handleLogin = async (e: React.FormEvent) => {
+  //   try {
+  //       e.preventDefault();
+  //       const response = await apiClient.post('/auth/login', {
+  //         email: authData.email,
+  //         password: authData.password,
+  //       });
+  //       setAccessToken(response.access_token);
+  //       console.log("Access Token: ", response.access_token);
+  //       console.log("Refresh Token: ", response.refresh_token);
+  //       setUser({
+  //         user_id: response.user.user_id,
+  //         user_name: response.user.user_name,
+  //         email: response.user.email,
+  //         phone: response.user.phone,
+  //         password: response.user.password,
+  //       });
+  //       console.log("User: ", user);
+  //       setIsLoggedIn(true);
+  //       setAuthData({ email: '', password: '', name: '', phone: '' });
+  //       setError(null);
+  //       localStorage.setItem('user', JSON.stringify(user));
+  //       localStorage.setItem('token', response.access_token);
+  //       //setUser(user);
+  //       //setToken(response.access_token);
+  //   } catch (err) {
+  //     setError('Login failed. Please check your credentials.');
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
   const handleLogin = async (e: React.FormEvent) => {
-    try {
-        e.preventDefault();
-        const response = await apiClient.post('/auth/login', {
-          email: authData.email,
-          password: authData.password,
-        });
-        setAccessToken(response.access_token);
-        console.log("Access Token: ", response.access_token);
-        console.log("Refresh Token: ", response.refresh_token);
-        setUser({
-          user_id: response.user.user_id,
-          user_name: response.user.user_name,
-          email: response.user.email,
-          phone: response.user.phone,
-          password: response.user.password,
-        });
-        console.log("User: ", user);
-        setIsLoggedIn(true);
-        setAuthData({ email: '', password: '', name: '', phone: '' });
-        setError(null);
-    } catch (err) {
-      setError('Login failed. Please check your credentials.');
-    } finally {
-      setLoading(false);
-    }
-  };
+  try {
+    e.preventDefault();
+    const response = await apiClient.post('/auth/login', {
+      email: authData.email,
+      password: authData.password,
+    });
+    setAccessToken(response.access_token);
+    const newUser = {
+      user_id: response.user.user_id,
+      user_name: response.user.user_name,
+      email: response.user.email,
+      phone: response.user.phone,
+      password: response.user.password,
+    };
+    setUser(newUser);
+    console.log("Access Token: ", response.access_token);
+    console.log("Refresh Token: ", response.refresh_token);
+    setIsLoggedIn(true);
+    setAuthData({ email: '', password: '', name: '', phone: '' });
+    setError(null);
+    localStorage.setItem('user', JSON.stringify(newUser));
+    localStorage.setItem('token', response.access_token);
+  } catch (err) {
+    setError('Login failed. Please check your credentials.');
+  } finally {
+    setLoading(false);
+  }
+};
 
   const handleRegister = async (e: React.FormEvent) => {
   e.preventDefault();
@@ -237,6 +282,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setUser(null);
     setUsers([]);
     setTasks([]);
+
+    setUser(null);
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    //setToken(null);
 
     window.location.href = 'http://localhost:3000';
   };

@@ -159,10 +159,7 @@ function CreateProjectForm({}) {
                 project_description: desc,
                 company_id: companyId
             });
-            setProjects((prev)=>[
-                    ...prev,
-                    newProject
-                ]);
+            //setProjects((prev) => [...prev, newProject]);
             setMsg('Project created successfully!');
             setName('');
             setDesc('');

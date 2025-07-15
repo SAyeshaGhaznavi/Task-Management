@@ -5,7 +5,7 @@ import { Request } from 'express';
 export declare class CompanyMembersController {
     private readonly companyMembersService;
     constructor(companyMembersService: CompanyMembersService);
-    create(createCompanyMemberDto: CreateCompanyMemberDto, req: Request): Promise<{
+    create(createCompanyMemberDto: CreateCompanyMemberDto): Promise<{
         company_id: number;
         user_id: number;
         user_role: string;

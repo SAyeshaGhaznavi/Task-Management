@@ -22,7 +22,7 @@ export class AuthController {
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
-    return res.json({ refresh_token: tokens.refresh_token, user: user });
+    return res.json({ refresh_token: tokens.refresh_token, user: user, access_token: tokens.access_token });
   }
 
     @Post('register')

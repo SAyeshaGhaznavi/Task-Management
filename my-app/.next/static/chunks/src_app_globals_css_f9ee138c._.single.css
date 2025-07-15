@@ -283,10 +283,6 @@
     top: calc(var(--spacing) * -1);
   }
 
-  .top-full {
-    top: 100%;
-  }
-
   .-right-1 {
     right: calc(var(--spacing) * -1);
   }

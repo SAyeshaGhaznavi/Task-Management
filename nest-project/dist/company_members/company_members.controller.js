@@ -26,12 +26,7 @@ let CompanyMembersController = class CompanyMembersController {
     constructor(companyMembersService) {
         this.companyMembersService = companyMembersService;
     }
-    async create(createCompanyMemberDto, req) {
-        const user = req.user;
-        const isAuthorized = await this.companyMembersService.isAdminOfCompany(user.userId, createCompanyMemberDto.company_id);
-        if (!isAuthorized) {
-            throw new common_1.ForbiddenException('Only company admins can add members');
-        }
+    async create(createCompanyMemberDto) {
         return this.companyMembersService.create(createCompanyMemberDto);
     }
     async remove(company_id, user_id, req) {
@@ -67,13 +62,10 @@ let CompanyMembersController = class CompanyMembersController {
 };
 exports.CompanyMembersController = CompanyMembersController;
 __decorate([
-    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard, roles_guard_1.RolesGuard),
     (0, common_1.Post)(),
-    (0, roles_decorator_1.Roles)(role_enum_1.Role.ADMIN),
     __param(0, (0, common_1.Body)()),
-    __param(1, (0, common_1.Req)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_company_member_dto_1.CreateCompanyMemberDto, Object]),
+    __metadata("design:paramtypes", [create_company_member_dto_1.CreateCompanyMemberDto]),
     __metadata("design:returntype", Promise)
 ], CompanyMembersController.prototype, "create", null);
 __decorate([
