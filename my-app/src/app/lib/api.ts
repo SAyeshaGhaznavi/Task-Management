@@ -2,14 +2,6 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/a
 
 let accessToken: string | null = null;
 
-// export function setAccessToken(token: string) {
-//   accessToken = token;
-// }
-
-//const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
-
-//let accessToken: string | null = null;
-
 export function setAccessToken(token: string) {
   accessToken = token;
   if (typeof window !== 'undefined') {

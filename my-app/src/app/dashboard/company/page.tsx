@@ -7,7 +7,6 @@ import Link from 'next/link';
 
 export default function CompaniesPage() {
   const {companies, setCompanies}=useAuth();
-  //const [companies, setCompanies] = useState<Company[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [name, setName] = useState('');
   const [location, setLocation] = useState('');

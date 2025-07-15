@@ -14,8 +14,6 @@ export class UserTodoController {
 
   @Post()
   create(@Body() createUserTodoDto: CreateUserTodoDto) {
-    // TODO: Replace  assigningUserId with actual user ID from auth/session
-    //const assigningUserId = null; // e.g., req.user.userId if using auth
     return this.userTodoService.create({ ...createUserTodoDto});
   }
 
@@ -56,23 +54,5 @@ export class UserTodoController {
  ) {
    return this.userTodoService.remove(+user_id, +todo_id);
  }
-
-  // @Get('test/job')
-  // async testQueueJob() {
-  // try {
-  //   await this.notificationQueue.add('notify', {
-  //     userId: 6,
-  //     todoId: 29,
-  //     projectId: 5,
-  //     message: 'Test background notification 🔔',
-  //   });
-
-  //   return { status: 'Job added to queue' };
-  // } catch (err) {
-  //   console.error('❌ Error adding job:', err);
-  //   return { status: 'Failed to enqueue job', error: err.message };
-  // }
-  // }
-
 
 }

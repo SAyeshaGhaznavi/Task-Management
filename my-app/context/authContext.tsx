@@ -172,38 +172,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  // const handleLogin = async (e: React.FormEvent) => {
-  //   try {
-  //       e.preventDefault();
-  //       const response = await apiClient.post('/auth/login', {
-  //         email: authData.email,
-  //         password: authData.password,
-  //       });
-  //       setAccessToken(response.access_token);
-  //       console.log("Access Token: ", response.access_token);
-  //       console.log("Refresh Token: ", response.refresh_token);
-  //       setUser({
-  //         user_id: response.user.user_id,
-  //         user_name: response.user.user_name,
-  //         email: response.user.email,
-  //         phone: response.user.phone,
-  //         password: response.user.password,
-  //       });
-  //       console.log("User: ", user);
-  //       setIsLoggedIn(true);
-  //       setAuthData({ email: '', password: '', name: '', phone: '' });
-  //       setError(null);
-  //       localStorage.setItem('user', JSON.stringify(user));
-  //       localStorage.setItem('token', response.access_token);
-  //       //setUser(user);
-  //       //setToken(response.access_token);
-  //   } catch (err) {
-  //     setError('Login failed. Please check your credentials.');
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
   const handleLogin = async (e: React.FormEvent) => {
   try {
     e.preventDefault();
@@ -291,7 +259,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setUser(null);
     localStorage.removeItem('user');
     localStorage.removeItem('token');
-    //setToken(null);
 
     window.location.href = 'http://localhost:3000';
   };
@@ -374,8 +341,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setCompanyProjects,
     companyUsers,
     setCompanyUsers,
-    //accessToken,
-    //setAccessToken,
   }}
 >
   {children}

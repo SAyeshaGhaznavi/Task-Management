@@ -17,10 +17,7 @@ interface User {
 export default function CompanyDetailPage() {
   const {company, setCompany, projects, setProjects, user}=useAuth();
   const { id } = useParams();
-  //const [company, setCompany] = useState(null);
-  //const [projects, setProjects] = useState([]);
   const [error, setError] = useState('');
-  //const { user } = useAuth();
 
   const curCompany= apiClient.get(`/company/${id}`);
 

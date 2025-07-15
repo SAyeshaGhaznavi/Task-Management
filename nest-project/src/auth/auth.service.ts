@@ -50,7 +50,7 @@ export class AuthService {
     const newUser = await this.usersService.create({
       user_name: data.user_name,
       email: data.email,
-      password: data.password, // not hashed
+      password: data.password,
       phone: data.phone,
     });
 

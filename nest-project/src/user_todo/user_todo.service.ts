@@ -93,19 +93,6 @@ export class UserTodoService {
         assignedBy: createUserTodoDto.assigned_by ?? null,
       });
 
-      // Remove direct notification and DB creation here to avoid double notification
-      // const notification = await this.notificationService.createNotification({
-      //   userId: user_id,
-      //   todoId: todo_id,
-      //   projectId: project_id,
-      //   message: notificationPayload.message,
-      // });
-
-      // this.eventsGateway.notifyTodoAssigned(user_id, {
-      //   ...notificationPayload,
-      //   createdAt: notification.createdAt,
-      // });
-
       this.logger.log(`📢 Notification job queued for user ${user_id} for todo ${todo_id}`);
     } catch (error) {
       this.logger.error(`❌ Failed to queue notification for user ${user_id}: ${error.message}`);

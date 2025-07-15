@@ -21,7 +21,6 @@ const links = [
   { name: 'Projects', href: '/dashboard/project', icon: WrenchScrewdriverIcon },
   { name: 'Task', href: '/dashboard/task', icon: DocumentDuplicateIcon },
   { name: 'Todos', href: '/dashboard/todo', icon: ClipboardDocumentListIcon },
-  //{ name: 'Notification', href: '/dashboard/notification', icon: BellIcon },
   { name: 'Invites', href: '/dashboard/invites', icon: BellIcon },
   { name: 'Admin', href: '/dashboard/admin', icon: UserGroupIcon},
   { name: 'Edit', href: '/dashboard/edit', icon: AdjustmentsHorizontalIcon },

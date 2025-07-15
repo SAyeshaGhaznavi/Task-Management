@@ -1,17 +1,3 @@
-// 'use client';
-// import { useAuth } from '../../../context/authContext';
-
-// export default function DashboardHome() {
-//   const { user, handleLogout } = useAuth();
-
-//   return (
-//     <div className="p-8">
-//       <h1 className="text-2xl mb-4">Welcome, {user?.user_name}</h1>
-//     </div>
-//   );
-// }
-
-
 'use client';
 
 import { useAuth } from '../../../context/authContext';
